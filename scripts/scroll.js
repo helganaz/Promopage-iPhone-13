@@ -27,7 +27,7 @@ const scrollFunction = () => {
 
 scrollFunction()
 
-// Данный код не работает с Safari
+// Данный код не работает с Safari, поэтому используем seamless.polyfill()
 // if (section) {
 //       section.scrollIntoView({
 //          behavior: 'smooth',

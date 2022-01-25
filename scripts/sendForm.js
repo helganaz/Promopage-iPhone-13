@@ -8,18 +8,21 @@ const sendForm = () => {
 
     btnOpenModal.addEventListener('click', () => {
         modal.style.display = 'flex';
+        // делаем текст заголовка в модалке равным выбранному товару
         modalTitle.textContent = cardDetailsTitle.textContent;
     })
 
+    // закрытие модалки
     modalClose.addEventListener('click', () => {
         modal.style.display = 'none';
     })
 
     modalForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        // работаем с label, т.к в данной верстке у инпутов нет отличительных знаков
+        // работаем с label, т.к в данной вёрстке у инпутов нет отличительных знаков
         const labels = modal.querySelectorAll('.modal__label');
-
+        
+        // создаем объект, в который будем записывать данные формы
         const sendMessage = {};
 
         labels.forEach(label => {
@@ -29,7 +32,7 @@ const sendForm = () => {
             
             sendMessage[span.textContent] = input.value
         })
-
+        // запостим на jsonplaceholder
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             body: JSON.stringify(sendMessage),

@@ -33,14 +33,14 @@ const sendForm = () => {
             sendMessage[span.textContent] = input.value
         })
         // запостим на jsonplaceholder
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify(sendMessage),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-            })
-            .then(() => console.log('Отправлено'))
+        // fetch('https://jsonplaceholder.typicode.com/posts', {
+        //     method: 'POST',
+        //     body: JSON.stringify(sendMessage),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        //     })
+        //     .then(() => console.log('Отправлено'))
         
     })
 }
